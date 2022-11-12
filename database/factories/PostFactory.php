@@ -11,6 +11,10 @@ use App\Models\Category;
  */
 class PostFactory extends Factory
 {
+
+
+
+
     /**
      * Define the model's default state.
      *

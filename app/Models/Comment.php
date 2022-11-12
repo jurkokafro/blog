@@ -9,6 +9,8 @@ class Comment extends Model
 {
     use HasFactory;
 
+
+
     public function post() {    //the id is probably post_id -> laravel assumption
         //hasOne, hasMany, belongsTo, belongsToMany
         return $this->belongsTo(Post::class);

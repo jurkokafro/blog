@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,8 +19,6 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->text('body');
             $table->timestamps();
-            //$table->unsignedBigInteger('post_id');
-            //$table->foreign('post_id')->references('id')->on('posts')->cascadeOnDelete();
         });
     }
 
