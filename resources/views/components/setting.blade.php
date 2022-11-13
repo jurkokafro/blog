@@ -10,6 +10,7 @@
             <h4 class="font-semibold mb-4">Povezave:</h4>
             <ul>
                 <li><a href="/" class="{{ request()->is('/') ? 'text-blue-500' : '' }}">Domov</a></li>
+                <li><a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">Uredi</a></li>
                 <li><a href="/admin/post/create" class="{{ request()->is('admin/post/create') ? 'text-blue-500' : '' }}">Ustvari</a></li>
             </ul>
         </aside>
