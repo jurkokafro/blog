@@ -1,42 +1,38 @@
 <x-layout>
-    <section class="py-8 max-w-md mx-auto">
-        <h1 class="text-lg font-bold mb-4">
-            Objavi nov prispevek
-        </h1>
 
-        <x-panel>
-            <form method="POST" action="/admin/posts" enctype="multipart/form-data">
-                @csrf
+    <x-setting heading="Objavi nov prispevek">
+        <form method="POST" action="/admin/posts" enctype="multipart/form-data">
+            @csrf
 
-                <x-form.input name="title" />
-                <x-form.input name="slub" />
-                <x-form.input name="thumbnail" type="file" />
+            <x-form.input name="title" />
+            <x-form.input name="slub" />
+            <x-form.input name="thumbnail" type="file" />
 
-                <x-form.textarea name="excerpt" />
-                <x-form.textarea name="body" />
+            <x-form.textarea name="excerpt" />
+            <x-form.textarea name="body" />
 
 
-                <x-form.field>
-                    <x-form.label name="category" />
+            <x-form.field>
+                <x-form.label name="category" />
 
-                    <select name="category_id" id="category_id">
-                        @foreach (\App\Models\Category::all() as $category)
-                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}> {{ ucwords($category->name) }}</option>
-                        @endforeach
+                <select name="category_id" id="category_id">
+                    @foreach (\App\Models\Category::all() as $category)
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}> {{ ucwords($category->name) }}</option>
+                    @endforeach
 
 
-                    </select>
+                </select>
 
-                    <x-form.error name="category" />
+                <x-form.error name="category" />
 
-                </x-form.field>
+            </x-form.field>
 
 
 
 
-                <x-form.button>Shrani</x-form.button>
+            <x-form.button>Shrani</x-form.button>
 
-            </form>
-        </x-panel>
-    </section>
+        </form>
+    </x-setting>
+
 </x-layout>
